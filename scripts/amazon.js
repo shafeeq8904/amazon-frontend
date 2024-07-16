@@ -3,6 +3,7 @@ import { products } from '../data/products.js'
 import { formatCurrency } from './utils/money.js'
 
 
+
 let productHtml=''
 
 products.forEach((product) => {
@@ -80,3 +81,5 @@ document.querySelectorAll('.js-add-to-cart')
             updateCartQuantity()
         })
     })
+
+
