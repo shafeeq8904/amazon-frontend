@@ -210,7 +210,7 @@
   margin-bottom: 15px;
 }
 
-.quantity-input{
+.quantity-input {
   width: 40px;
   border-radius: 5px;
   font-size: 15px;
@@ -220,7 +220,6 @@
 .save-quantity-link {
   display: none;
 }
-
 
 .is-editing-quantity .quantity-input {
   display: initial;
