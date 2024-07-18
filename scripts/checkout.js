@@ -41,9 +41,11 @@ cart.forEach((cartItem)=>{
                   <span>
                     Quantity: <span class="quantity-label">${cartItem.quantity}</span>
                   </span>
-                  <span class="update-quantity-link link-primary">
+                  <span class="update-quantity-link link-primary js-update" data-product-id="${matchingProduct.id}">
                     Update
                   </span>
+                  <input class="quantity-input">
+                  <span class="save-quantity-link link-primary">Save</span>
                   <span class="delete-quantity-link link-primary js-delete" data-product-id="${matchingProduct.id}">
                     Delete
                   </span>
@@ -109,6 +111,19 @@ document.querySelectorAll('.js-delete')
             container.remove();
             updateCartQuantity()
         })
+    })
+
+document.querySelectorAll('.js-update')
+    .forEach((updatelink)=>{
+        updatelink.addEventListener('click', ()=>{
+            const productId = updatelink.dataset.productId
+            
+            const container = document.querySelector(
+                `.js-cart-item-container-${productId}`
+              );
+              container.classList.add('is-editing-quantity')
+        })
+
     })
 
     function updateCartQuantity() {
