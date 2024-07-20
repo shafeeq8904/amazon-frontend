@@ -22,15 +22,32 @@ cart.forEach((cartItem)=>{
         }
     });
 
-    
+    if (!matchingProduct) {
+        console.error(`Product with ID ${productId} not found in products`);
+        return;
+    }
 
+    const deliveryOptionId = cartItem.deliveryOptionId ;
+
+    let deliveryOption = deliveryOptions.find(option => option.id === deliveryOptionId);
+
+    if (!deliveryOption) {
+        console.error(`Delivery option with ID ${deliveryOptionId} not found in deliveryOptions`);
+        return;
+    }
+
+        const today =dayjs();
+        const deliveryDate = today.add(
+            deliveryOption.deliveryDays, 'days'
+        );
+        const dateString = deliveryDate.format('dddd, MMMM D');
     
    cartSummaryHtml +=
     
    `
       <div class="cart-item-container js-item-container-${matchingProduct.id}">
             <div class="delivery-date">
-              Delivery date: Tuesday, June 21
+              Delivery date: ${dateString}
             </div>
 
             <div class="cart-item-details-grid">
@@ -72,17 +89,17 @@ cart.forEach((cartItem)=>{
 
 function deliveryOptionsHTML(matchingProduct,cartItem){
     let html=''
-    deliveryOptions.forEach((deliveryOptions)=>{
+    deliveryOptions.forEach((deliveryOption)=>{
 
         const today =dayjs();
         const deliveryDate = today.add(
-            deliveryOptions.deliveryDays,'days'
+            deliveryOption.deliveryDays, 'days'
         );
-        const dateString = deliveryDate.format('dddd, MMMM D')
-        const pricestring = deliveryOptions.priceCents === 0?'FREE': `$${formatCurrency(deliveryOptions.priceCents)} -`;
+        const dateString = deliveryDate.format('dddd, MMMM D');
+        const pricestring = deliveryOption.priceCents === 0?'FREE': `$${formatCurrency(deliveryOption.priceCents)} -`;
 
-        const isChecked = deliveryOptions.id ===
-        cartItem.deliveryOptionsId
+        const isChecked = deliveryOption.id ===
+        cartItem.deliveryOptionId
         
         html+=
         
