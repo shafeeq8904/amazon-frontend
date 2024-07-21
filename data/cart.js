@@ -68,7 +68,7 @@ export function calculateCartQuantity() {
   
     return cartQuantity;
     
-}
+};
 
 export function updateQuantity(productId, newQuantity) {
     if(newQuantity>0){
@@ -85,8 +85,8 @@ export function updateQuantity(productId, newQuantity) {
     document.querySelector('.js-return-to-home-link').innerHTML = `${calculateCartQuantity()} items`
     document.querySelector(`.js-quantity-label-${productId}`).innerHTML = `${matchingItem.quantity}`
     saveToStorage();
-}
-}
+};
+};
 
 export function updateDeliveryOption(productId, deliveryOptionId) {
     let matchingItem;
@@ -97,4 +97,4 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     });
     matchingItem.deliveryOptionId = deliveryOptionId;
     saveToStorage();
-}
+};
