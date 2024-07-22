@@ -131,7 +131,10 @@ export function renderOrderSummary(){
 
                 const container = document.querySelector(`.js-item-container-${productId}`);
                 container.remove();
+                
                 updateCartQuantity();
+                renderOrderSummary();
+                renderPaymentSummary();
             });
         });
 
