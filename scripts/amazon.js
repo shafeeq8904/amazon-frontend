@@ -93,3 +93,27 @@ document.querySelectorAll('.js-add-to-cart')
     })
 
 
+/* using class 
+
+
+    <div class="product-rating-container">
+                    <img class="product-rating-stars"
+                    src="${product.getStarsUrl()}">
+                    <div class="product-rating-count link-primary">
+                    ${product.rating.count}
+                    </div>
+                </div>
+
+
+    <div class="product-price">
+                    $(product.getPrice()}
+                </div>
+
+
+    using inheritence 
+
+    ${product.extraInfoHtml()} at line 49
+
+
+
+*/
