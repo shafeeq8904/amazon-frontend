@@ -1,5 +1,5 @@
 import {cart , removeFromCart,calculateCartQuantity,updateQuantity,updateDeliveryOption} from '../../data/cart.js'
-import { products , getProduct } from '../../data/products.js';
+import { products , getProduct, } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
 //importing external library which has exactly one function
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js'
@@ -55,7 +55,7 @@ export function renderOrderSummary(){
                     ${matchingProduct.name}
                     </div>
                     <div class="product-price">
-                    $${(matchingProduct.priceCents / 100).toFixed(2)}
+                        ${matchingProduct.getPrice()}
                     </div>
                     <div class="product-quantity">
                     <span>
