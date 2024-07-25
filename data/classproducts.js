@@ -728,3 +728,25 @@ class Clothing extends Product{
     }
     return new Product(productDetails);
   })
+
+/*
+  export const products = [];
+
+export function loadProducts(){
+  const xhr = new XMLHttpRequest();
+
+  xhr.addEventListener('load',()=>{
+      products = JSON.parse(xhr.response).map((productDetails) => {
+        if(productDetails.type === 'Clothing'){
+            return new Clothing(productDetails)
+        }
+        return new Product(productDetails);
+      })
+  })
+
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+
+}
+
+*/
