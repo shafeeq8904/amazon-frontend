@@ -16,6 +16,12 @@ if (!cart) {
     }];
 }
 
+export function clearCart() {
+    cart.length = 0;  // Clear the array
+    localStorage.setItem('cart', JSON.stringify(cart)); 
+}
+
+
 function saveToStorage(){
     localStorage.setItem('cart',JSON.stringify(cart))
 }

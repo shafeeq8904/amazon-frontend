@@ -80,7 +80,7 @@ export function renderOrderSummary(){
                     </div>
                 </div>
                 </div> 
-        `
+        `      
     });
 
     function deliveryOptionsHTML(matchingProduct,cartItem){
